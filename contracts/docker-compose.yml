@@ -1,0 +1,10 @@
+services:
+  tact:
+    build:
+      context: .
+    volumes:
+      - .:/app/sources
+      - ./tact.config.json:/app/tact.config.json:ro
+      - ./nfts.csv:/app/ton-nft-deployer/nfts.csv
+    env_file:
+      - .env
